@@ -24,7 +24,7 @@ const (
 type Req struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Lamport       int64                  `protobuf:"varint,1,opt,name=lamport,proto3" json:"lamport,omitempty"`
-	PId           string                 `protobuf:"bytes,2,opt,name=pId,proto3" json:"pId,omitempty"`
+	PId           int64                  `protobuf:"varint,2,opt,name=pId,proto3" json:"pId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -66,11 +66,11 @@ func (x *Req) GetLamport() int64 {
 	return 0
 }
 
-func (x *Req) GetPId() string {
+func (x *Req) GetPId() int64 {
 	if x != nil {
 		return x.PId
 	}
-	return ""
+	return 0
 }
 
 type Resp struct {
@@ -124,11 +124,11 @@ const file_grpc_handin4_proto_rawDesc = "" +
 	"\x12grpc/handin4.proto\x12\ahandin4\"1\n" +
 	"\x03Req\x12\x18\n" +
 	"\alamport\x18\x01 \x01(\x03R\alamport\x12\x10\n" +
-	"\x03pId\x18\x02 \x01(\tR\x03pId\" \n" +
+	"\x03pId\x18\x02 \x01(\x03R\x03pId\" \n" +
 	"\x04Resp\x12\x18\n" +
-	"\alamport\x18\x01 \x01(\x03R\alamport2.\n" +
-	"\x06Ricart\x12$\n" +
-	"\x05Enter\x12\f.handin4.Req\x1a\r.handin4.RespB\x16Z\x14handin4/grpc;handin4b\x06proto3"
+	"\alamport\x18\x01 \x01(\x03R\alamport20\n" +
+	"\x06Ricart\x12&\n" +
+	"\aReceive\x12\f.handin4.Req\x1a\r.handin4.RespB\x16Z\x14handin4/grpc;handin4b\x06proto3"
 
 var (
 	file_grpc_handin4_proto_rawDescOnce sync.Once
@@ -148,8 +148,8 @@ var file_grpc_handin4_proto_goTypes = []any{
 	(*Resp)(nil), // 1: handin4.Resp
 }
 var file_grpc_handin4_proto_depIdxs = []int32{
-	0, // 0: handin4.Ricart.Enter:input_type -> handin4.Req
-	1, // 1: handin4.Ricart.Enter:output_type -> handin4.Resp
+	0, // 0: handin4.Ricart.Receive:input_type -> handin4.Req
+	1, // 1: handin4.Ricart.Receive:output_type -> handin4.Resp
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

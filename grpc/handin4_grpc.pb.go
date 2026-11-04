@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Ricart_Enter_FullMethodName = "/handin4.Ricart/Enter"
+	Ricart_Receive_FullMethodName = "/handin4.Ricart/Receive"
 )
 
 // RicartClient is the client API for Ricart service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type RicartClient interface {
-	Enter(ctx context.Context, in *Req, opts ...grpc.CallOption) (*Resp, error)
+	Receive(ctx context.Context, in *Req, opts ...grpc.CallOption) (*Resp, error)
 }
 
 type ricartClient struct {
@@ -37,10 +37,10 @@ func NewRicartClient(cc grpc.ClientConnInterface) RicartClient {
 	return &ricartClient{cc}
 }
 
-func (c *ricartClient) Enter(ctx context.Context, in *Req, opts ...grpc.CallOption) (*Resp, error) {
+func (c *ricartClient) Receive(ctx context.Context, in *Req, opts ...grpc.CallOption) (*Resp, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Resp)
-	err := c.cc.Invoke(ctx, Ricart_Enter_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, Ricart_Receive_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +51,7 @@ func (c *ricartClient) Enter(ctx context.Context, in *Req, opts ...grpc.CallOpti
 // All implementations must embed UnimplementedRicartServer
 // for forward compatibility.
 type RicartServer interface {
-	Enter(context.Context, *Req) (*Resp, error)
+	Receive(context.Context, *Req) (*Resp, error)
 	mustEmbedUnimplementedRicartServer()
 }
 
@@ -62,8 +62,8 @@ type RicartServer interface {
 // pointer dereference when methods are called.
 type UnimplementedRicartServer struct{}
 
-func (UnimplementedRicartServer) Enter(context.Context, *Req) (*Resp, error) {
-	return nil, status.Error(codes.Unimplemented, "method Enter not implemented")
+func (UnimplementedRicartServer) Receive(context.Context, *Req) (*Resp, error) {
+	return nil, status.Error(codes.Unimplemented, "method Receive not implemented")
 }
 func (UnimplementedRicartServer) mustEmbedUnimplementedRicartServer() {}
 func (UnimplementedRicartServer) testEmbeddedByValue()                {}
@@ -86,20 +86,20 @@ func RegisterRicartServer(s grpc.ServiceRegistrar, srv RicartServer) {
 	s.RegisterService(&Ricart_ServiceDesc, srv)
 }
 
-func _Ricart_Enter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Ricart_Receive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Req)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RicartServer).Enter(ctx, in)
+		return srv.(RicartServer).Receive(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Ricart_Enter_FullMethodName,
+		FullMethod: Ricart_Receive_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RicartServer).Enter(ctx, req.(*Req))
+		return srv.(RicartServer).Receive(ctx, req.(*Req))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -112,8 +112,8 @@ var Ricart_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*RicartServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Enter",
-			Handler:    _Ricart_Enter_Handler,
+			MethodName: "Receive",
+			Handler:    _Ricart_Receive_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

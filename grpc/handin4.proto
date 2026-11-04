@@ -5,12 +5,12 @@ package handin4;
 option go_package = "handin4/grpc;handin4";
 
 service Ricart {
-    rpc Enter(Req) returns(Resp);
+    rpc Receive(Req) returns(Resp);
 }
 
 message Req{
     int64 lamport = 1;
-    string pId = 2;
+    int64 pId = 2;
 }
 
 message Resp{
