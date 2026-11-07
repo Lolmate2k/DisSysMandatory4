@@ -14,6 +14,7 @@ import (
 	"sync"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 type node struct {
@@ -59,18 +60,18 @@ func main() {
 	scanner := bufio.NewScanner(peerFile)
 
 	//Iterating the peerfile assigning an id and not adding ones own to the list
-	var count int64 = 0
+	count := int64(0)
 	ip := ""
 	for scanner.Scan() {
 		line := strings.TrimSpace(scanner.Text())
-		if count == *procesId {
-			ip = line
-			continue
-		}
 		if line == "" {
 			continue
 		}
-		addrs = append(addrs, line)
+		if count == *procesId {
+			ip = line
+		} else {
+			addrs = append(addrs, line)
+		}
 		count++
 	}
 
@@ -89,9 +90,27 @@ func main() {
 	grpcServer := grpc.NewServer()
 	n := newNode(ip, *procesId)
 	pb.RegisterRicartServer(grpcServer, n)
-	if err := grpcServer.Serve(lis); err != nil {
-		log.Fatalf("Failed to serve : %v", err)
+	go func() { // Has to be in go func, since it would block if not
+		if err := grpcServer.Serve(lis); err != nil {
+			log.Fatalf("Failed to serve : %v", err)
+		}
+	}()
+
+	var conns []*grpc.ClientConn
+	for _, addr := range addrs {
+		conn, err := grpc.NewClient(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+		if err != nil {
+			log.Fatalf("%d Could not create client for %s: %v", n.procesId, addr, err)
+		}
+		conns = append(conns, conn)
+		n.peers[addr] = pb.NewRicartClient(conn)
 	}
+	defer func() { // Makes the connections to other clients close, upon closure of node
+		for _, c := range conns {
+			c.Close()
+		}
+	}()
+
 	log.Printf("%d: State changed to %s", n.procesId, n.state)
 
 	for {
