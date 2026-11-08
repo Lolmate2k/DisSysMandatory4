@@ -1,0 +1,125 @@
+2026/11/08 19:18:14 [Node 0] event=NODE_START addr=127.0.0.1:8080 state=RELEASED my_lamport=0
+2026/11/08 19:18:14 [Node 0] event=STATE_CHANGE state=WANTED my_lamport=0
+2026/11/08 19:18:14 [Node 0] event=REQUEST_CREATED my_lamport=1
+2026/11/08 19:18:14 [Node 0] event=REQUEST_SENT to=127.0.0.3:8080 my_lamport=1
+2026/11/08 19:18:14 [Node 0] event=REQUEST_SENT to=127.0.0.2:8080 my_lamport=1
+2026/11/08 19:18:17 [Node 0] event=REQUEST_RECEIVED from=1 their_lamport=1 my_state=WANTED my_lamport=2
+2026/11/08 19:18:17 [Node 0] event=REQUEST_DEFERRED from=1 reason=WANTED_WITH_PRIORITY my_lamport=2
+2026/11/08 19:18:18 [Node 0] event=REPLY_RECEIVED from=127.0.0.2:8080 their_lamport=3
+2026/11/08 19:18:20 [Node 0] event=REQUEST_RECEIVED from=2 their_lamport=1 my_state=WANTED my_lamport=5
+2026/11/08 19:18:20 [Node 0] event=REQUEST_DEFERRED from=2 reason=WANTED_WITH_PRIORITY my_lamport=5
+2026/11/08 19:18:23 [Node 0] event=REPLY_RECEIVED from=127.0.0.3:8080 their_lamport=5
+2026/11/08 19:18:23 [Node 0] event=ALL_REPLIES_RECEIVED my_lamport=6
+2026/11/08 19:18:23 [Node 0] event=STATE_CHANGE state=HELD my_lamport=6
+2026/11/08 19:18:23 [Node 0] event=CS_ENTER my_lamport=6
+2026/11/08 19:18:24 [Node 0] event=CS_EXIT my_lamport=6
+2026/11/08 19:18:24 [Node 0] event=STATE_CHANGE state=RELEASED my_lamport=6
+2026/11/08 19:18:24 [Node 0] event=RELEASING_DEFERRED count=2
+2026/11/08 19:18:24 [Node 0] event=STATE_CHANGE state=WANTED my_lamport=6
+2026/11/08 19:18:24 [Node 0] event=REQUEST_CREATED my_lamport=7
+2026/11/08 19:18:24 [Node 0] event=REQUEST_SENT to=127.0.0.3:8080 my_lamport=7
+2026/11/08 19:18:24 [Node 0] event=DEFERRED_RELEASED to=1 my_lamport=7
+2026/11/08 19:18:24 [Node 0] event=REPLY_SENT to=1 my_lamport=8
+2026/11/08 19:18:24 [Node 0] event=DEFERRED_RELEASED to=2 my_lamport=8
+2026/11/08 19:18:24 [Node 0] event=REPLY_SENT to=2 my_lamport=9
+2026/11/08 19:18:24 [Node 0] event=REQUEST_SENT to=127.0.0.2:8080 my_lamport=9
+2026/11/08 19:18:25 [Node 0] event=REQUEST_RECEIVED from=1 their_lamport=10 my_state=WANTED my_lamport=11
+2026/11/08 19:18:25 [Node 0] event=REQUEST_DEFERRED from=1 reason=WANTED_WITH_PRIORITY my_lamport=11
+2026/11/08 19:18:25 [Node 0] event=REPLY_RECEIVED from=127.0.0.2:8080 their_lamport=12
+2026/11/08 19:18:26 [Node 0] event=REQUEST_RECEIVED from=2 their_lamport=14 my_state=WANTED my_lamport=15
+2026/11/08 19:18:26 [Node 0] event=REQUEST_DEFERRED from=2 reason=WANTED_WITH_PRIORITY my_lamport=15
+2026/11/08 19:18:26 [Node 0] event=REPLY_RECEIVED from=127.0.0.3:8080 their_lamport=15
+2026/11/08 19:18:26 [Node 0] event=ALL_REPLIES_RECEIVED my_lamport=16
+2026/11/08 19:18:26 [Node 0] event=STATE_CHANGE state=HELD my_lamport=16
+2026/11/08 19:18:26 [Node 0] event=CS_ENTER my_lamport=16
+2026/11/08 19:18:27 [Node 0] event=CS_EXIT my_lamport=16
+2026/11/08 19:18:27 [Node 0] event=STATE_CHANGE state=RELEASED my_lamport=16
+2026/11/08 19:18:27 [Node 0] event=RELEASING_DEFERRED count=2
+2026/11/08 19:18:27 [Node 0] event=STATE_CHANGE state=WANTED my_lamport=16
+2026/11/08 19:18:27 [Node 0] event=REQUEST_CREATED my_lamport=17
+2026/11/08 19:18:27 [Node 0] event=REQUEST_SENT to=127.0.0.3:8080 my_lamport=17
+2026/11/08 19:18:27 [Node 0] event=DEFERRED_RELEASED to=1 my_lamport=17
+2026/11/08 19:18:27 [Node 0] event=REQUEST_SENT to=127.0.0.2:8080 my_lamport=17
+2026/11/08 19:18:27 [Node 0] event=REPLY_SENT to=1 my_lamport=18
+2026/11/08 19:18:27 [Node 0] event=DEFERRED_RELEASED to=2 my_lamport=17
+2026/11/08 19:18:27 [Node 0] event=REPLY_SENT to=2 my_lamport=19
+2026/11/08 19:18:28 [Node 0] event=REPLY_RECEIVED from=127.0.0.2:8080 their_lamport=22
+2026/11/08 19:18:28 [Node 0] event=REQUEST_RECEIVED from=1 their_lamport=21 my_state=WANTED my_lamport=24
+2026/11/08 19:18:28 [Node 0] event=REQUEST_DEFERRED from=1 reason=WANTED_WITH_PRIORITY my_lamport=24
+2026/11/08 19:18:29 [Node 0] event=REPLY_RECEIVED from=127.0.0.3:8080 their_lamport=27
+2026/11/08 19:18:29 [Node 0] event=ALL_REPLIES_RECEIVED my_lamport=28
+2026/11/08 19:18:29 [Node 0] event=STATE_CHANGE state=HELD my_lamport=28
+2026/11/08 19:18:29 [Node 0] event=CS_ENTER my_lamport=28
+2026/11/08 19:18:29 [Node 0] event=REQUEST_RECEIVED from=2 their_lamport=26 my_state=HELD my_lamport=29
+2026/11/08 19:18:29 [Node 0] event=REQUEST_DEFERRED from=2 reason=HELD my_lamport=29
+2026/11/08 19:18:30 [Node 0] event=CS_EXIT my_lamport=29
+2026/11/08 19:18:30 [Node 0] event=STATE_CHANGE state=RELEASED my_lamport=29
+2026/11/08 19:18:30 [Node 0] event=RELEASING_DEFERRED count=2
+2026/11/08 19:18:30 [Node 0] event=STATE_CHANGE state=WANTED my_lamport=29
+2026/11/08 19:18:30 [Node 0] event=REQUEST_CREATED my_lamport=30
+2026/11/08 19:18:30 [Node 0] event=DEFERRED_RELEASED to=1 my_lamport=30
+2026/11/08 19:18:30 [Node 0] event=DEFERRED_RELEASED to=2 my_lamport=30
+2026/11/08 19:18:30 [Node 0] event=REPLY_SENT to=2 my_lamport=32
+2026/11/08 19:18:30 [Node 0] event=REQUEST_SENT to=127.0.0.2:8080 my_lamport=31
+2026/11/08 19:18:30 [Node 0] event=REPLY_SENT to=1 my_lamport=31
+2026/11/08 19:18:30 [Node 0] event=REQUEST_SENT to=127.0.0.3:8080 my_lamport=30
+2026/11/08 19:18:31 [Node 0] event=REPLY_RECEIVED from=127.0.0.2:8080 their_lamport=35
+2026/11/08 19:18:31 [Node 0] event=REQUEST_RECEIVED from=1 their_lamport=33 my_state=WANTED my_lamport=37
+2026/11/08 19:18:31 [Node 0] event=REQUEST_DEFERRED from=1 reason=WANTED_WITH_PRIORITY my_lamport=37
+2026/11/08 19:18:32 [Node 0] event=REQUEST_RECEIVED from=2 their_lamport=37 my_state=WANTED my_lamport=38
+2026/11/08 19:18:32 [Node 0] event=REQUEST_DEFERRED from=2 reason=WANTED_WITH_PRIORITY my_lamport=38
+2026/11/08 19:18:32 [Node 0] event=REPLY_RECEIVED from=127.0.0.3:8080 their_lamport=38
+2026/11/08 19:18:32 [Node 0] event=ALL_REPLIES_RECEIVED my_lamport=39
+2026/11/08 19:18:32 [Node 0] event=STATE_CHANGE state=HELD my_lamport=39
+2026/11/08 19:18:32 [Node 0] event=CS_ENTER my_lamport=39
+2026/11/08 19:18:33 [Node 0] event=CS_EXIT my_lamport=39
+2026/11/08 19:18:33 [Node 0] event=STATE_CHANGE state=RELEASED my_lamport=39
+2026/11/08 19:18:33 [Node 0] event=RELEASING_DEFERRED count=2
+2026/11/08 19:18:33 [Node 0] event=STATE_CHANGE state=WANTED my_lamport=39
+2026/11/08 19:18:33 [Node 0] event=REQUEST_CREATED my_lamport=40
+2026/11/08 19:18:33 [Node 0] event=REQUEST_SENT to=127.0.0.3:8080 my_lamport=40
+2026/11/08 19:18:33 [Node 0] event=DEFERRED_RELEASED to=1 my_lamport=40
+2026/11/08 19:18:33 [Node 0] event=REPLY_SENT to=1 my_lamport=41
+2026/11/08 19:18:33 [Node 0] event=DEFERRED_RELEASED to=2 my_lamport=40
+2026/11/08 19:18:33 [Node 0] event=REPLY_SENT to=2 my_lamport=42
+2026/11/08 19:18:33 [Node 0] event=REQUEST_SENT to=127.0.0.2:8080 my_lamport=40
+2026/11/08 19:18:34 [Node 0] event=REQUEST_RECEIVED from=1 their_lamport=44 my_state=WANTED my_lamport=45
+2026/11/08 19:18:34 [Node 0] event=REQUEST_DEFERRED from=1 reason=WANTED_WITH_PRIORITY my_lamport=45
+2026/11/08 19:18:34 [Node 0] event=REPLY_RECEIVED from=127.0.0.2:8080 their_lamport=45
+2026/11/08 19:18:35 [Node 0] event=REQUEST_RECEIVED from=2 their_lamport=48 my_state=WANTED my_lamport=49
+2026/11/08 19:18:35 [Node 0] event=REQUEST_DEFERRED from=2 reason=WANTED_WITH_PRIORITY my_lamport=49
+2026/11/08 19:18:35 [Node 0] event=REPLY_RECEIVED from=127.0.0.3:8080 their_lamport=49
+2026/11/08 19:18:35 [Node 0] event=ALL_REPLIES_RECEIVED my_lamport=50
+2026/11/08 19:18:35 [Node 0] event=STATE_CHANGE state=HELD my_lamport=50
+2026/11/08 19:18:35 [Node 0] event=CS_ENTER my_lamport=50
+2026/11/08 19:18:36 [Node 0] event=CS_EXIT my_lamport=50
+2026/11/08 19:18:36 [Node 0] event=STATE_CHANGE state=RELEASED my_lamport=50
+2026/11/08 19:18:36 [Node 0] event=RELEASING_DEFERRED count=2
+2026/11/08 19:18:36 [Node 0] event=STATE_CHANGE state=WANTED my_lamport=50
+2026/11/08 19:18:36 [Node 0] event=REQUEST_CREATED my_lamport=51
+2026/11/08 19:18:36 [Node 0] event=DEFERRED_RELEASED to=1 my_lamport=51
+2026/11/08 19:18:36 [Node 0] event=REPLY_SENT to=1 my_lamport=52
+2026/11/08 19:18:36 [Node 0] event=REQUEST_SENT to=127.0.0.3:8080 my_lamport=52
+2026/11/08 19:18:36 [Node 0] event=DEFERRED_RELEASED to=2 my_lamport=52
+2026/11/08 19:18:36 [Node 0] event=REPLY_SENT to=2 my_lamport=53
+2026/11/08 19:18:36 [Node 0] event=REQUEST_SENT to=127.0.0.2:8080 my_lamport=52
+2026/11/08 19:18:37 [Node 0] event=REPLY_RECEIVED from=127.0.0.2:8080 their_lamport=57
+2026/11/08 19:18:37 [Node 0] event=REQUEST_RECEIVED from=1 their_lamport=55 my_state=WANTED my_lamport=59
+2026/11/08 19:18:37 [Node 0] event=REQUEST_DEFERRED from=1 reason=WANTED_WITH_PRIORITY my_lamport=59
+2026/11/08 19:18:38 [Node 0] event=REPLY_RECEIVED from=127.0.0.3:8080 their_lamport=59
+2026/11/08 19:18:38 [Node 0] event=ALL_REPLIES_RECEIVED my_lamport=60
+2026/11/08 19:18:38 [Node 0] event=STATE_CHANGE state=HELD my_lamport=60
+2026/11/08 19:18:38 [Node 0] event=CS_ENTER my_lamport=60
+2026/11/08 19:18:38 [Node 0] event=REQUEST_RECEIVED from=2 their_lamport=58 my_state=HELD my_lamport=61
+2026/11/08 19:18:38 [Node 0] event=REQUEST_DEFERRED from=2 reason=HELD my_lamport=61
+2026/11/08 19:18:39 [Node 0] event=CS_EXIT my_lamport=61
+2026/11/08 19:18:39 [Node 0] event=STATE_CHANGE state=RELEASED my_lamport=61
+2026/11/08 19:18:39 [Node 0] event=RELEASING_DEFERRED count=2
+2026/11/08 19:18:39 [Node 0] event=STATE_CHANGE state=WANTED my_lamport=61
+2026/11/08 19:18:39 [Node 0] event=REQUEST_CREATED my_lamport=62
+2026/11/08 19:18:39 [Node 0] event=REQUEST_SENT to=127.0.0.2:8080 my_lamport=62
+2026/11/08 19:18:39 [Node 0] event=DEFERRED_RELEASED to=2 my_lamport=62
+2026/11/08 19:18:39 [Node 0] event=REQUEST_SENT to=127.0.0.3:8080 my_lamport=62
+2026/11/08 19:18:39 [Node 0] event=REPLY_SENT to=2 my_lamport=63
+2026/11/08 19:18:39 [Node 0] event=DEFERRED_RELEASED to=1 my_lamport=63
+2026/11/08 19:18:39 [Node 0] event=REPLY_SENT to=1 my_lamport=64
